@@ -102,7 +102,7 @@ func Highlight(code, lang, optsStr string) string {
 		langOpt = "-l" + lang
 	}
 
-	cmd := exec.Command(pygmentsBin, langOpt, "-fhtml", "-O", options)
+	cmd := exec.Command(pygmentsBin, langOpt, "-Fsymbols", "-fhtml", "-O", options)
 	cmd.Stdin = strings.NewReader(code)
 	cmd.Stdout = &out
 	cmd.Stderr = &stderr
